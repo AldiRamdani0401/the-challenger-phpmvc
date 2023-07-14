@@ -1,4 +1,4 @@
 .htaccess
 /src/.htaccess
 /app/.htaccess
-img/
+src/img/
