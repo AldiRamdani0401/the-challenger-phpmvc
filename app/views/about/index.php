@@ -10,7 +10,7 @@
                 <p class="text-center"><i>" Sebagai sarana edukasi terbuka untuk semua kalangan mengenai Bahasa Pemrogaram teknologi WEB dasar dengan pendekatan sesuai kebutuhan Industri Software, dan sebagai bentuk pengabdian untuk masyarakat. "</i></p>
                 <hr>
                 <h5 class="text-center m-4">Developer BracketSters</h5>
-                <img src="<?= BASEURL ?>/app/src/img/aldi.png" alt="img1" class="mx-auto d-block m-3 img-thumbnail" width="150px" height="150px">
+                <img src="<?= BASEURL ?>/app/src/images/aldi.png" alt="img1" class="mx-auto d-block m-3 img-thumbnail" width="150px" height="150px">
                 <h6 class="text-center">Aldi Ramdani</h6>
             </div>
         </div>

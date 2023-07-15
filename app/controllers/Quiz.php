@@ -1,11 +1,11 @@
 <?php
 
-class Dashboard extends Controller {
+class Quiz extends Controller {
     public function index()
     {
-        $data['title'] = 'Dashboard';
+        $data['title'] = 'Battle';
         $this->view('templates/users/header', $data);
-        $this->view('dashboard/users');
+        $this->view('battle/index');
         $this->view('templates/users/footer');
     }
 }

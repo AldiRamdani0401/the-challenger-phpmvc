@@ -7,7 +7,7 @@
             <div class="col-lg-8 bg-dark text-white rounded mx-auto d-block m-3 p-2 text-wrap text-center">
                 <p class="p-2 fs-3"><b>The Champion #1</b></p>
                 <hr>
-                <img src="<?= BASEURL ?>/app/src/img/aldi.png" alt="img1" class="mx-auto d-block m-3 img-thumbnail" width="150px" height="150px">
+                <img src="<?= BASEURL ?>/app/src/images/aldi.png" alt="img1" class="mx-auto d-block m-3 img-thumbnail" width="150px" height="150px">
                 <h5 class="text-center">Aldi Ramdani</h5>
                 <h6 class="text-center">Karawang</h6>
             </div>

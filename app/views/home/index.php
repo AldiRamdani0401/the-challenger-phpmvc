@@ -4,7 +4,7 @@
 </div>
 <div class="container mb-4">
     <div class="container">
-        <img src="<?= BASEURL ?>/app/src/img/img1.png" alt="img1" class="mx-auto d-block m-3">
+        <img src="<?= BASEURL ?>/app/src/images/img1.png" alt="img1" class="mx-auto d-block m-3">
         <button class="btn btn-lg btn-danger mx-auto d-block m-3"><a href="<?= BASEURL ?>/login" class="text-decoration-none text-white">Mulai Tantangan</a></button>
         <div class="row">
             <div class="col-sm-4 bg-dark text-white p-2 border">
