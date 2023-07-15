@@ -1,5 +1,5 @@
 .htaccess
 /src/.htaccess
 /app/.htaccess
-/src/images
-/src/images
+images/
+images/
