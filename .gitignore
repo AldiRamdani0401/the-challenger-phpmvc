@@ -1,5 +1,5 @@
 .htaccess
 /src/.htaccess
 /app/.htaccess
-src/
-src/
+app/src/
+app/src/
