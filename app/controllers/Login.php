@@ -9,4 +9,10 @@ class Login extends Controller {
         $this->view('login/index');
         $this->view('templates/users/footer');
     }
+
+    public function login()
+    {
+        $_SESSION["login"] = true;
+        header("Location: ".BASEURL."/dashboard");
+    }
 }
