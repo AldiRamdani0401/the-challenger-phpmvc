@@ -51,19 +51,25 @@
             </div>
         </div>
         <div class="col-sm-3 text-white p-2" style="margin-right:5px; margin-bottom:10px; background:#000;">
-            <h3 class="text-center">echo "..." ;</h3>
+            <h3 class="text-center mt-3">Select Mode</h3>
             <hr>
-            <p class="text-center">Pertama-tama, pecahkan masalahnya. Kemudian, tulis kodenya.</p>
-            <p class="text-center"><strong>(John Johnson)</strong></p>
+            <div class="mt-5">
+                <a class="btn btn-success d-block m-2 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">Easy</a>
+                <a href="<?= BASEURL; ?>/maintenance" class="btn btn-warning d-block m-2 fw-bold">Medium</a>
+                <a href="<?= BASEURL; ?>/maintenance" class="btn btn-danger d-block m-2 fw-bold">Hard</a>
+                <a href="<?= BASEURL; ?>/maintenance" class="btn btn-dark d-block m-2 fw-bold">Expert</a>
+            </div>
         </div>
         <div class="col-sm-4 bg-dark text-white p-2" style="margin-right: 5px; margin-bottom: 10px;">
-            <h3 class="text-center">Coders Aktif</h3>
+            <h3 class="text-center mt-3">Coders Aktif</h3>
+            <hr>
             <div class="table-responsive mt-5" style="max-height: 200px; overflow-y: scroll;">
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th>Rank</th>
                             <th>Coders</th>
+                            <th>Points</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -72,6 +78,7 @@
                             <tr>
                                 <td><?php echo $i; ?></td>
                                 <td>Data <?php echo $i; ?></td>
+                                <td>Point <?php echo $i; ?></td>
                             </tr>
                         <?php endfor; ?>
                     </tbody>
@@ -80,4 +87,22 @@
         </div>
     </div>
 </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4 class="text-center">Apakah anda sudah siap?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Start</button>
+            </div>
+        </div>
+    </div>
 </div>
