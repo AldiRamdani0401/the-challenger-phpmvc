@@ -1,5 +1,5 @@
 .htaccess
 /src/.htaccess
 /app/.htaccess
-src/img/.jpg
-src/img/.png
+/app/src/img/*.jpg
+/app/src/img/*.png
