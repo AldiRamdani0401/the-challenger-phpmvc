@@ -1,12 +1,12 @@
 <?php
 
-class Leaderboard extends Controller {
+class Login extends Controller {
     public function index()
     {
-        $data['title'] = 'Leaderboard';
+        $data['title'] = 'Login';
 
         $this->view('templates/users/header', $data);
-        $this->view('leaderboard/index');
+        $this->view('login/index');
         $this->view('templates/users/footer');
     }
 }

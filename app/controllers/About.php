@@ -5,8 +5,8 @@ class About extends Controller {
     {
         $data['title'] = 'About';
 
-        $this->view('templates/components/users/header', $data);
+        $this->view('templates/users/header', $data);
         $this->view('about/index');
-        $this->view('templates/components/users/footer');
+        $this->view('templates/users/footer');
     }
 }

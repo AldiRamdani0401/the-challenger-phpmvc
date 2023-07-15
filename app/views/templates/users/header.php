@@ -25,11 +25,15 @@
             <a class="nav-link <?php if($data['title'] === 'About'){ echo "active"; }?>" href="<?= BASEURL ?>/about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  <?php if($data['title'] === 'Leaderboard'){ echo "active"; }?>" href="#">Leaderboard</a>
+            <a class="nav-link  <?php if($data['title'] === 'Leaderboard'){ echo "active"; }?>" href="<?= BASEURL ?>/leaderboard">Leaderboard</a>
           </li>
         </ul>
         <div class="d-flex">
-          <a class="btn btn-primary">Login</a>
+          <?php if ($data['title'] === 'Login' || $data['title'] === 'Register') { ?>
+            <a href="<?= BASEURL ?>/" class="btn btn-danger">{ Kembali }</a>
+            <?php } else {?>
+              <a href="<?= BASEURL ?>/login" class="btn btn-primary">Login</a>
+          <?php } ?>
         </div>
       </div>
     </div>
