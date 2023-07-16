@@ -28,7 +28,8 @@
                 </div>
 
                 <div class="modal-button-container">
-                    <button onclick="closeScoreModal()">Continue</button>
+                    <button type="submit" onclick="closeScoreModal()" id="tombol-finish">Continue</button>
+                    <!-- <a href="<?= BASEURL; ?>/dashboard" class="btn btn-primary">Continue</a> -->
                 </div>
 
             </div>
@@ -46,7 +47,7 @@
                 <h1 id="display-question"></h1>
             </div>
 
-            <div class="game-options-container">
+            <div class="game-options-container" id="container">
 
                 <div class="modal-container" id="option-modal">
 
@@ -88,7 +89,7 @@
             </div>
 
             <div class="next-button-container">
-                <button onclick="handleNextQuestion()">Next Question</button>
+                <button onclick="handleNextQuestion()" id="tombol-next">Next Question</button>
             </div>
         </div>
     </main>

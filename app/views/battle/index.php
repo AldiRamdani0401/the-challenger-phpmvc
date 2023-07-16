@@ -1,3 +1,13 @@
+<?php
+    if( $_SERVER['REQUEST_METHOD'] === 'POST' ){
+        if( isset($_POST['playerScore']) ){
+            $playerScore = $_POST['playerScore'];
+        }
+    } else {
+        $playerScore = '';
+    }
+?>
+
 <div class="container-fluid p-3 text-white text-center" style="background:#101010;">
     <h1> Battlefield </h1>
 </div>
@@ -34,7 +44,7 @@
                             </td>
                             <td>:</td>
                             <td>
-                                <h6>1000</h6>
+                                <h6 id="points"><?= $playerScore ?></h6>
                             </td>
                         </tr>
                         <tr>

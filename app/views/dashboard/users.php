@@ -72,7 +72,7 @@
             <h3 class="text-center mt-4">History</h3>
             <hr>
             <div class="table-responsive mt-5" style="max-height: 200px; overflow-y: scroll;">
-                <table class="table table-striped table-hover">
+                <table class="table table-striped table-hover text-center">
                     <thead>
                         <tr>
                             <th>No</th>
