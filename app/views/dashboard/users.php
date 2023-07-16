@@ -69,16 +69,68 @@
             </div>
         </div>
         <div class="col-sm-3 bg-dark text-white p-2" style="margin-right:5px; margin-bottom:10px;">
-            <h3 class="text-center">echo "..." ;</h3>
+            <h3 class="text-center mt-4">History</h3>
             <hr>
-            <p class="text-center">Pertama-tama, pecahkan masalahnya. Kemudian, tulis kodenya.</p>
-            <p class="text-center"><strong>(John Johnson)</strong></p>
+            <div class="table-responsive mt-5" style="max-height: 200px; overflow-y: scroll;">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Match</th>
+                            <th>Points</th>
+                            <th>Benar</th>
+                            <th>Salah</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Tampilkan 100 baris data di sini -->
+                        <?php for ($i = 1; $i <= 100; $i++) : ?>
+                            <tr>
+                                <td><?php echo $i; ?></td>
+                                <td>Data <?php echo $i; ?></td>
+                                <td>Point <?php echo $i; ?></td>
+                                <td>Point <?php echo $i; ?></td>
+                                <td>Point <?php echo $i; ?></td>
+                            </tr>
+                        <?php endfor; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="col-sm-4 bg-dark text-white p-2" style="margin-right:5px; margin-bottom:10px;">
-            <h3 class="text-center">print("...")</h3>
+        <div class="col-sm-4 bg-dark text-white p-3" style="margin-right:5px; margin-bottom:10px;">
+            <h3 class="text-center mt-4">Chat to Developer</h3>
             <hr>
-            <p class="text-center">Kode milikmu yang tidak kau lihat leibh dari 6 bulan sama saja dengan kode yang dibuat oleh orang lain.</p>
-            <p class="text-center"><strong>(Hukum Eagleson)</strong></p>
+            <div class="table-responsive mt-5 mb-3" style="max-height: 200px; overflow-y: scroll;">
+                <table class="table table-striped table-hover table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Pesan</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Tampilkan 100 baris data di sini -->
+                        <?php for ($i = 1; $i <= 100; $i++) : ?>
+                            <tr>
+                                <td><b>Me</b></td>
+                                <td>Aplikasi anda bagus sekali, saya sangat suka</td>
+                                <td>read</td>
+                                <td><button>hapus</button></td>
+                            </tr>
+                        <?php endfor; ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container">
+                <form class="text-center">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="pesan">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

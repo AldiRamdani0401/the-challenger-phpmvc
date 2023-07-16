@@ -63,7 +63,7 @@
         <div class="col-sm-4 bg-dark text-white p-2" style="margin-right: 5px; margin-bottom: 10px;">
             <h3 class="text-center mt-3">Coders Aktif</h3>
             <hr>
-            <div class="table-responsive mt-5" style="max-height: 200px; overflow-y: scroll;">
+            <div class="table-responsive mt-5 text-center" style="max-height: 200px; overflow-y: scroll;">
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
@@ -101,7 +101,10 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Start</button>
+                <form action="<?= BASEURL?>/quiz">
+
+                    <button type="submit" class="btn btn-primary">Start</button>
+                </form>
             </div>
         </div>
     </div>
