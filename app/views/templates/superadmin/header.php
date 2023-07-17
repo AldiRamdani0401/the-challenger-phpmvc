@@ -11,37 +11,15 @@
 </head>
 
 <?php if(isset($_SESSION['login'])){
-  if ($_SESSION['login']) {
     echo '<body';
-      echo ' style="background: #333;"';
+      echo ' style="background: #fff;"';
     echo '>';
-  }else{
-    echo '<body';
-    if ($data['title'] !== 'Home') { echo 'style="background: #f5f5f5;"';}
-    echo '>';
-  }
-}else{
-  $_SESSION['login'] = false;
-  echo '<body';
-  if ($data['title'] !== 'Home') { echo 'style="background: #f5f5f5;"';}
-  echo '>';
 }
 ?>
 
-<?php
-if ($_SESSION['login']) {
-  echo '<body';
-    echo ' style="background: #333;"';
-  echo '>';
-}else{
-  echo '<body';
-  if ($data['title'] !== 'Home') { echo 'style="background: #f5f5f5;"';}
-  echo '>';
-}
-?>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000080;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="<?php if($_SESSION["login"] === true){ echo BASEURL . '/admin'; } else { echo BASEURL . '/home'; } ?>">{ <b>BracketSters</b> | Admin }</a>
+      <a class="navbar-brand" href="<?php if($_SESSION["login"] === true){ echo BASEURL . '/superadmin'; } else { echo BASEURL . '/home'; } ?>">{ <b>BracketSters</b> | SuperAdmin }</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -49,16 +27,16 @@ if ($_SESSION['login']) {
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <?php if($_SESSION["login"] === true) { ?>
           <li class="nav-item">
-            <a class="nav-link  <?php if($data['title'] === 'Admin'){ echo "active"; }?>" aria-current="page" href="<?= BASEURL ?>/admin">Home</a>
+            <a class="nav-link  <?php if($data['title'] === 'SuperAdmin'){ echo "active"; }?>" aria-current="page" href="<?= BASEURL ?>/superadmin"><b>Home</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  <?php if($data['title'] === 'MyTasks'){ echo "active"; }?>" href="<?= BASEURL ?>/admin/mytasks">MyTasks</a>
+            <a class="nav-link  <?php if($data['title'] === 'TaskManager'){ echo "active"; }?>" href="<?= BASEURL ?>/superadmin/taskmanager"><b>Task Manager</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  <?php if($data['title'] === 'SetBattle'){ echo "active"; }?>" href="<?= BASEURL ?>/admin/setbattle">SetBattle</a>
+            <a class="nav-link  <?php if($data['title'] === 'Reports'){ echo "active"; }?>" href="<?= BASEURL ?>/superadmin/reports"><b>Reports</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if($data['title'] === 'Settings'){ echo "active"; }?>" href="<?= BASEURL ?>/admin/settings">Settings</a>
+            <a class="nav-link <?php if($data['title'] === 'Settings'){ echo "active"; }?>" href="<?= BASEURL ?>/superadmin/settings"><b>Settings</b></a>
           </li>
         </ul>
         <?php }?>
