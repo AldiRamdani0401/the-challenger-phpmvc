@@ -1,6 +1,12 @@
-<!-- <h1> Selamat Datang  { Coders }</h1> -->
+<?php
+    if (!$_SESSION['login'] && is_null($_SESSION['username'])) {
+        header('Location: ' .BASEURL. '/login');
+        exit;
+    }
 
-<!-- buat flasher disini => notif ketika user login -->
+    $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
+?>
+
 <div class="container-fluid p-3 bg-primary text-white text-center">
     <h1> { Main Control }</h1>
 </div>

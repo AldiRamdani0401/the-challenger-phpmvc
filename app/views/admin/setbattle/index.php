@@ -1,24 +1,15 @@
-<!-- <h1> Selamat Datang  { Coders }</h1> -->
+<?php
+    if (!$_SESSION['login'] && is_null($_SESSION['username'])) {
+        header('Location: ' .BASEURL. '/login');
+        exit;
+    }
 
-<!-- buat flasher disini => notif ketika user login -->
+    $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
+?>
+
 <div class="container-fluid p-3 bg-primary text-white text-center">
     <h1> { Settings Battle }</h1>
 </div>
-<!-- <div class="container">
-    <div class="container">
-        <div class="container">
-        <div class="col-lg-8 bg-dark text-white p-3 rounded mx-auto d-block m-3 text-wrap ">
-                <p><b class="fs-3">BracketSters,</b> Merupakan aplikasi berbasis website yang menyediakan Free Test mengenai Bahasa Pemrograman pada bidang Web Development.</p>
-                <p>Tujuan utama dibuatnya <b>BracketSters</b> adalah :</p>
-                <p class="text-center"><i>" Sebagai sarana edukasi terbuka untuk semua kalangan mengenai Bahasa Pemrogaram teknologi WEB dasar dengan pendekatan sesuai kebutuhan Industri Software, dan sebagai bentuk pengabdian untuk masyarakat. "</i></p>
-                <hr>
-                <h5 class="text-center m-4">Developer BracketSters</h5>
-                <img src="<?= BASEURL ?>/app/src/img/aldi.png" alt="img1" class="mx-auto d-block m-3 img-thumbnail" width="150px" height="150px">
-                <h6 class="text-center">Aldi Ramdani</h6>
-            </div>
-        </div>
-    </div>
-</div> -->
 <div class="container mt-5">
     <div class="row">
         <div class="col-sm-4 bg-dark text-white p-3" style="margin-right:5px; margin-bottom:10px;">
