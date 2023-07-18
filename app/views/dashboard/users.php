@@ -20,13 +20,14 @@
                 <img src="<?= BASEURL ?>/app/src/images/aldi.png" alt="img1" class="mx-auto d-block m-3 img-thumbnail" width="150px" height="150px">
                 <table class="table table-dark table-striped table-hover">
                     <tbody>
+                        <?php foreach($data['user'] as $user) : ?>
                         <tr>
                             <td>
                                 <h6 class="">Username</h6>
                             </td>
                             <td>:</td>
                             <td>
-                                <h6>aldiramdani04</h6>
+                                <h6><?= $user['username'] ?></h6>
                             </td>
                         </tr>
                         <tr>
@@ -35,7 +36,7 @@
                             </td>
                             <td>:</td>
                             <td>
-                                <h6>1</h6>
+                                <h6><?= $user['user_id'] ?></h6>
                             </td>
                         </tr>
                         <tr>
@@ -44,7 +45,7 @@
                             </td>
                             <td>:</td>
                             <td>
-                                <h6>Aldi Ramdani</h6>
+                                <h6><?= $user['nama_lengkap'] ?></h6>
                             </td>
                         </tr>
                         <tr>
@@ -53,9 +54,10 @@
                             </td>
                             <td>:</td>
                             <td>
-                                <h6>aldi@gmail.com</h6>
+                                <h6><?= $user['email'] ?></h6>
                             </td>
                         </tr>
+                        <?php endforeach ?>
                     </tbody>
                 </table>
             </div>

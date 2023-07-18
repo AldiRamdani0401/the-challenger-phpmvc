@@ -59,4 +59,25 @@ class Users_model
 
         return $this->db->rowCount();
     }
+
+    public function getDataUserByName($dataUser){
+        $getUser = "SELECT * FROM ".$this->table_users." WHERE username = :username ";
+
+        $this->db->query($getUser);
+        $this->db->bind(':username', $dataUser['username']);
+        $this->db->execute();
+        $namaUser = $this->db->single()['nama_lengkap'];
+
+        if($namaUser){
+            $query = "SELECT * FROM ".$this->table_users." WHERE nama_lengkap = :nama_lengkap ";
+
+            $this->db->query($query);
+            $this->db->bind(':nama_lengkap', $namaUser);
+            $this->db->execute();
+
+            return $this->db->resultSet();
+        } else {
+            return false;
+        }
+    }
 }
