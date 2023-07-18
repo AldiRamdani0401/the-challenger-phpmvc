@@ -55,6 +55,10 @@ class Login extends Controller {
 
             header("Location: ".BASEURL."/superadmin/dashboard");
             exit;
+        } else {
+            Flasher::setFlash('Gagal', 'Login', 'danger');
+            header('Location: '. BASEURL . '/login');
+            exit;
         }
     }
 }
