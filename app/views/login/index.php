@@ -4,7 +4,12 @@
 <div class="container">
     <div class="container">
         <div class="container">
-            <div class="col-lg-3 bg-dark text-white rounded mx-auto d-block m-5 p-2 text-wrap">
+            <div class="col-lg-3 text-white rounded mx-auto d-block m-5 p-2 text-wrap">
+                <div class="row justify-content-center mt-3">
+                    <div class="col-lg-6">
+                        <?= Flasher::flash(); ?>
+                    </div>
+                </div>
                 <div class="card mx-auto" style="max-width: 400px;">
                     <div class="card-body">
                             <h1 class="text-center mb-4 text-white p-2" style='background: #212280;'>Login</h1>

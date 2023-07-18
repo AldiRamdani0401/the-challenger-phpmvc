@@ -46,7 +46,7 @@ if ($_SESSION['login']) {
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <?php if($_SESSION["login"] === true) { ?>
+          <?php if($_SESSION["login"]) { ?>
           <li class="nav-item">
             <a class="nav-link  <?php if($data['title'] === 'Dashboard'){ echo "active"; }?>" aria-current="page" href="<?= BASEURL ?>/dashboard">Home</a>
           </li>

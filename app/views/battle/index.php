@@ -1,4 +1,12 @@
 <?php
+    if (!$_SESSION['login'] && is_null($_SESSION['username'])) {
+        header('Location: ' .BASEURL. '/login');
+        exit;
+    }
+
+    $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
+?>
+<?php
     if( $_SERVER['REQUEST_METHOD'] === 'POST' ){
         if( isset($_POST['playerScore']) ){
             $playerScore = $_POST['playerScore'];

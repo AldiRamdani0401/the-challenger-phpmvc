@@ -1,3 +1,11 @@
+<?php
+    if (!$_SESSION['login'] && is_null($_SESSION['username'])) {
+        header('Location: ' .BASEURL. '/login');
+        exit;
+    }
+
+    $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
+?>
 <div class="container">
     <div class="container">
         <div class="container">
