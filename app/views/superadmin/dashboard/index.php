@@ -8,7 +8,7 @@
 ?>
 
 <div class="container-fluid p-3 bg-primary text-white text-center">
-    <h1> Dashboard { <?= $username ?> }</h1>
+    <?= Flasher::flash(); echo "<h1>Dashboard { $username }</h1>"; ?>
 </div>
 <div class="container">
     <div class="col-lg-5 bg-dark text-white p-3 rounded mx-auto d-block m-4 text-wrap" style="border: 3px solid gold ;">
