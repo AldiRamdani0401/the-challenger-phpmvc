@@ -5,10 +5,10 @@ class Dashboard extends Controller {
     {
         $username = $_SESSION['username'];
 
-        $dataUser = ['username' => $username];
+        $namaUser = ['username' => $username];
 
         $data['title'] = 'Dashboard';
-        $data['user'] = $this->model('Users_model')->getDataUserByName($dataUser);
+        $data['user'] = $this->model('Users_model')->getDataUserByName($namaUser);
 
         $this->view('templates/users/header', $data);
         $this->view('dashboard/users', $data, $username);
