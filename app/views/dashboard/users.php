@@ -57,6 +57,24 @@
                                 <h6><?= $user['email'] ?></h6>
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <h6 class="">Rank</h6>
+                            </td>
+                            <td>:</td>
+                            <td>
+                                <h6><?= $user['rank'] ?></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 class="">Points</h6>
+                            </td>
+                            <td>:</td>
+                            <td>
+                                <h6><?= $user['points'] ?></h6>
+                            </td>
+                        </tr>
                         <?php endforeach ?>
                     </tbody>
                 </table>

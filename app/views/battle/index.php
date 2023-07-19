@@ -28,13 +28,14 @@
                 <img src="<?= BASEURL ?>/app/src/images/aldi.png" alt="img1" class="mx-auto d-block m-3 img-thumbnail" width="150px" height="150px">
                 <table class="table table-dark table-striped table-hover">
                     <tbody>
+                        <?php foreach($data['user'] as $data) : ?>
                         <tr>
                             <td>
                                 <h6 class="">Username</h6>
                             </td>
                             <td>:</td>
                             <td>
-                                <h6>aldiramdani04</h6>
+                                <h6><?= $data['username']; ?></h6>
                             </td>
                         </tr>
                         <tr>
@@ -43,7 +44,7 @@
                             </td>
                             <td>:</td>
                             <td>
-                                <h6>1</h6>
+                                <h6><?= $data['user_id']; ?></h6>
                             </td>
                         </tr>
                         <tr>
@@ -61,9 +62,10 @@
                             </td>
                             <td>:</td>
                             <td>
-                                <h6>10</h6>
+                                <h6><?= $data['rank'] ?></h6>
                             </td>
                         </tr>
+                        <?php endforeach?>
                     </tbody>
                 </table>
             </div>
@@ -92,13 +94,11 @@
                     </thead>
                     <tbody>
                         <!-- Tampilkan 100 baris data di sini -->
-                        <?php for ($i = 1; $i <= 100; $i++) : ?>
                             <tr>
                                 <td><?php echo $i; ?></td>
                                 <td>Data <?php echo $i; ?></td>
                                 <td>Point <?php echo $i; ?></td>
                             </tr>
-                        <?php endfor; ?>
                     </tbody>
                 </table>
             </div>
