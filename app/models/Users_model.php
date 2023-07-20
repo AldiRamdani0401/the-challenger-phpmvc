@@ -34,14 +34,52 @@ class Users_model
         return $this->db->resultSet();
     }
 
-    public function createUser($data)
+    public function upload()
     {
-        if (!preg_match("/^[a-zA-Z\s]+$/", $data['nama_lengkap'])){
+        $namaFile = $_FILES['photo']['name'];
+        $ukuranFile = $_FILES['photo']['size'];
+        $error = $_FILES['photo']['error'];
+        $tmpName = $_FILES['photo']['tmp_name'];
+
+        // cek apakah ada photo yang diupload
+        if ($error === 4){
             return false;
         }
 
-        if ($data['password'] !== $data['confPassword']){
+        // cek apakah yang diupload adalah gambar
+        $ekstensiPhotoValid = ['jpg', 'jpeg', 'png'];
+        $ekstensiPhoto = explode('.', $namaFile);
+        $ekstensiPhoto = strtolower(end($ekstensiPhoto));
+        if( !in_array($ekstensiPhoto, $ekstensiPhotoValid) )
+        {
             return false;
+        }
+
+        // cek jika ukurannya telalu besar
+        if($ukuranFile > 2000000){
+            return false;
+        }
+
+        // generate nama photo
+
+        $namaFileBaru = uniqid();
+        $namaFileBaru .= '.';
+        $namaFileBaru .= $ekstensiPhoto;
+
+        // akhir pengecekkan, photo akan di upload
+        move_uploaded_file($tmpName, 'app/src/images/' .$namaFileBaru);
+
+        return $namaFileBaru;
+    }
+
+    public function createUser($data)
+    {
+        if (!preg_match("/^[a-zA-Z\s]+$/", $data['nama_lengkap'])){
+            return 0;
+        }
+
+        if ($data['password'] !== $data['confPassword']){
+            return 0;
         }
 
         $check = "SELECT username FROM ".$this->table_users." WHERE username = :username";
@@ -51,15 +89,25 @@ class Users_model
         $result = $this->db->rowCount();
 
         if ($result > 0){
-            return false;
+            return 0;
         } else {
-            $query = "INSERT INTO ".$this->table_users." (nama_lengkap, username, email, password, confPassword) VALUES (:nama_lengkap, :username, :email, :password, :confPassword) ";
+            $query = "INSERT INTO ".$this->table_users." (nama_lengkap, username, email, password, confPassword, photo) VALUES (:nama_lengkap, :username, :email, :password, :confPassword, :photo) ";
             $this->db->query($query);
             $this->db->bind(':nama_lengkap', $data['nama_lengkap']);
             $this->db->bind(':username', $data['username']);
             $this->db->bind(':email', $data['email']);
             $this->db->bind(':password', $data['password']);
             $this->db->bind(':confPassword', $data['confPassword']);
+
+            // upload photo
+            $photo = $this->upload();
+
+            if(!$photo){
+                return 0;
+            }
+
+            $this->db->bind(':photo', $photo);
+
             $this->db->execute();
         }
 
@@ -101,6 +149,13 @@ class Users_model
 
     public function editUser($data)
     {
+        // $query = "SELECT photo FROM ".$this->table_users." WHERE user_id = :id";
+        // $this->db->query($query);
+        // $this->db->bind(':id', $data['id']);
+        // $this->db->execute();
+
+        // $result = $this->db->single();
+
         // Validasi confPassword tidak boleh kosong
         if (empty($data['confPassword'])) {
             return false;
@@ -133,6 +188,4 @@ class Users_model
 
         return $this->db->rowCount();
     }
-
-
 }

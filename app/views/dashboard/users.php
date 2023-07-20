@@ -17,10 +17,10 @@
             <div class="col-lg-8 bg-dark text-white rounded mx-auto d-block m-3 text-wrap ">
                 <h5 class="text-center m-4">My Profile</h5>
                 <hr>
-                <img src="<?= BASEURL ?>/app/src/images/aldi.png" alt="img1" class="mx-auto d-block m-3 img-thumbnail" width="150px" height="150px">
+                <?php foreach($data['user'] as $user) : ?>
+                <img src="<?= BASEURL ?>/app/src/images/<?= $user['photo']; ?>" alt="img1" class="mx-auto d-block m-3 img-thumbnail" width="150px" height="150px">
                 <table class="table table-dark table-striped table-hover">
                     <tbody>
-                        <?php foreach($data['user'] as $user) : ?>
                         <tr>
                             <td>
                                 <h6 class="">Username</h6>

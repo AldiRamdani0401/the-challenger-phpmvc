@@ -5,7 +5,7 @@
                 <div class="card mx-auto" style="max-width: 400px;">
                     <div class="card-body">
                     <h1 class="text-center mb-2 text-white p-2 rounded" style='background: #212280;'>Register</h1>
-                        <form class="row" method="post" action="<?= BASEURL; ?>/register/signup">
+                        <form class="row" method="post" action="<?= BASEURL; ?>/register/signup" enctype="multipart/form-data">
                             <div class="col-md-12 mt-2">
                                 <label for="nama_lengkap" class="form-label fw-bold">Nama Lengkap</label>
                                 <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="fullname" required>
@@ -17,6 +17,10 @@
                             <div class="col-md-12 mt-2">
                                 <label for="username" class="form-label fw-bold">Username</label>
                                 <input type="text" class="form-control" id="username" name="username" placeholder="username" required>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <label for="photo" class="form-label fw-bold">Photo</label>
+                                <input type="file" class="form-control" id="photo" name="photo" required>
                             </div>
                             <div class="col-md-12 mt-2">
                                 <label for="password" class="form-label fw-bold">Password</label>

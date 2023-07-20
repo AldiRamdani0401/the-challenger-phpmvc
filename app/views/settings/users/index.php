@@ -15,7 +15,7 @@
                 <div class="card mx-auto" style="max-width: 400px;">
                     <div class="card-body">
                     <h1 class="text-center mb-2 text-white p-2 rounded" style='background: #212280;'>Settings</h1>
-                        <form class="row" method="post" action="<?= BASEURL; ?>/settings/edituser">
+                        <form class="row" method="post" action="<?= BASEURL; ?>/settings/edituser" enctype="multipart/form-data">
                             <?php foreach($data['user'] as $data) : ?>
                             <input type="hidden" name="id" value="<?= $data['user_id'] ?>">
                             <div class="col-md-12 mt-2">
@@ -29,6 +29,11 @@
                             <div class="col-md-12 mt-2">
                                 <label for="username" class="form-label fw-bold">Username</label>
                                 <input type="text" class="form-control" id="username" name="username" placeholder="username" required value="<?= $data['username']; ?>">
+                            </div>
+                            <div class="col-md-12 mt-2 text-center">
+                                <label for="photo" class="form-label fw-bold">Photo</label>
+                                <img src="<?= BASEURL; ?>/app/src/images/<?= $data['photo']; ?>" alt="photo" class="mx-auto d-block img-thumbnail mb-2" width="150px" height="150px">
+                                <input type="file" class="form-control" id="photo" name="photo" placeholder="photo">
                             </div>
                             <div class="col-md-12 mt-2">
                                 <label for="password" class="form-label fw-bold">Password</label>
