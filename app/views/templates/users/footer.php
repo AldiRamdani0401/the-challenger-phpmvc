@@ -5,6 +5,24 @@
   </div>
 </footer>
 
+<!-- Bagian dari template halaman Battle -->
+<!-- Menambahkan script untuk menonaktifkan tombol refresh -->
+<script>
+    // Menonaktifkan tombol refresh
+    window.onload = function() {
+        disableRefreshButton();
+    }
+
+    function disableRefreshButton() {
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+            window.addEventListener('popstate', function () {
+                window.history.replaceState(null, null, window.location.href);
+            });
+        }
+    }
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

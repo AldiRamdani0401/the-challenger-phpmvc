@@ -9,7 +9,6 @@ class Battle extends Controller {
         $data['title'] = 'Battle';
         $data['user'] = $this->model('Users_model')->getDataUserByName($namaUser);
 
-
         $this->view('templates/users/header', $data);
         $this->view('battle/index', $data, $username);
         $this->view('templates/users/footer');
@@ -21,8 +20,10 @@ class Battle extends Controller {
     }
 
     public function getPoint($point, $data){
+        var_dump($data);
         $this->model('Gameplay_model')->setPoint($point, $data);
+        $this->model('Gameplay_model')->setRank();
         header('Location: '.BASEURL.'/battle');
-
+        exit;
     }
 }
