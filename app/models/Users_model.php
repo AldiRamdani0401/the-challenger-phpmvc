@@ -28,6 +28,12 @@ class Users_model
         }
     }
 
+    public function getUsers()
+    {
+        $this->db->query('SELECT * FROM '.$this->table_users);
+        return $this->db->resultSet();
+    }
+
     public function createUser($data)
     {
         if (!preg_match("/^[a-zA-Z\s]+$/", $data['nama_lengkap'])){
@@ -126,7 +132,6 @@ class Users_model
         $this->db->execute();
 
         return $this->db->rowCount();
-
     }
 
 

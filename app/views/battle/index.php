@@ -1,19 +1,13 @@
 <?php
-    if (!$_SESSION['login'] && is_null($_SESSION['username'])) {
-        header('Location: ' .BASEURL. '/login');
-        exit;
-    }
+if (!$_SESSION['login'] && is_null($_SESSION['username'])) {
+    header('Location: ' . BASEURL . '/login');
+    exit;
+}
 
-    $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
-?>
-<?php
-    if( $_SERVER['REQUEST_METHOD'] === 'POST' ){
-        if( isset($_POST['playerScore']) ){
-            $playerScore = $_POST['playerScore'];
-        }
-    } else {
-        $playerScore = '';
-    }
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
+$datas = $this->model('Users_model')->getUsers();
+
+
 ?>
 
 <div class="container-fluid p-3 text-white text-center" style="background:#101010;">
@@ -28,44 +22,44 @@
                 <img src="<?= BASEURL ?>/app/src/images/aldi.png" alt="img1" class="mx-auto d-block m-3 img-thumbnail" width="150px" height="150px">
                 <table class="table table-dark table-striped table-hover">
                     <tbody>
-                        <?php foreach($data['user'] as $data) : ?>
-                        <tr>
-                            <td>
-                                <h6 class="">Username</h6>
-                            </td>
-                            <td>:</td>
-                            <td>
-                                <h6><?= $data['username']; ?></h6>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h6 class="">User ID</h6>
-                            </td>
-                            <td>:</td>
-                            <td>
-                                <h6><?= $data['user_id']; ?></h6>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h6 class="">Points</h6>
-                            </td>
-                            <td>:</td>
-                            <td>
-                                <h6 id="points"><?= $playerScore ?></h6>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h6 class="">Rank</h6>
-                            </td>
-                            <td>:</td>
-                            <td>
-                                <h6><?= $data['rank'] ?></h6>
-                            </td>
-                        </tr>
-                        <?php endforeach?>
+                        <?php foreach ($data['user'] as $data) : ?>
+                            <tr>
+                                <td>
+                                    <h6 class="">Username</h6>
+                                </td>
+                                <td>:</td>
+                                <td>
+                                    <h6><?= $data['username']; ?></h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6 class="">User ID</h6>
+                                </td>
+                                <td>:</td>
+                                <td>
+                                    <h6><?= $data['user_id']; ?></h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6 class="">Points</h6>
+                                </td>
+                                <td>:</td>
+                                <td>
+                                    <h6 id="points"><?= $data['points'] ?></h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6 class="">Rank</h6>
+                                </td>
+                                <td>:</td>
+                                <td>
+                                    <h6><?= $data['rank'] ?></h6>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
                     </tbody>
                 </table>
             </div>
@@ -87,18 +81,19 @@
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Rank</th>
                             <th>Coders</th>
+                            <th>Rank</th>
                             <th>Points</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Tampilkan 100 baris data di sini -->
+                        <?php foreach ($datas as $data) : ?>
                             <tr>
-                                <td><?php echo $i; ?></td>
-                                <td>Data <?php echo $i; ?></td>
-                                <td>Point <?php echo $i; ?></td>
+                                <td><?= $data['username'] ?></td>
+                                <td><?= $data['rank'] ?></td>
+                                <td><?= $data['points'] ?></td>
                             </tr>
+                        <?php endforeach ?>
                     </tbody>
                 </table>
             </div>
@@ -119,7 +114,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close</button>
-                <form action="<?= BASEURL?>/quiz">
+                <form action="<?= BASEURL ?>/quiz">
 
                     <button type="submit" class="btn btn-primary">Start</button>
                 </form>

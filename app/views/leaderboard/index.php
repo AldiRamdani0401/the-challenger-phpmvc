@@ -1,3 +1,8 @@
+<!-- foreach ($datas as $data) {
+    $rank = $data['points'];
+    echo "$rank";
+} -->
+
 <div class="container-fluid p-3 bg-primary text-white text-center">
     <h1> Leaderboard </h1>
 </div>
